@@ -257,13 +257,257 @@ a {
 }
 
 /****footer****/
-footer {
+footer:not(.site-footer) {
   width: 100%;
-  background: rgba(0, 0, 0, 0.79);
+  background-color: #212529;
   text-align: center;
-  color: grey;
-  padding: 12px 10px;
-  font-size: 13px;
+  color: #e2e8f0;
+  padding: 16px 10px;
+  font-size: 13.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Light Dark Footer for My Account & Checkout pages */
+footer.light-dark-footer {
+  width: 100%;
+  background-color: #212529 !important;
+  color: #e2e8f0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer.light-dark-footer span {
+  color: #cbd5e1 !important;
+}
+
+footer.light-dark-footer strong {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Premium Responsive Spicello Footer */
+footer.site-footer {
+  width: 100%;
+  background-color: #06110a;
+  color: #adb5bd;
+  padding: 50px 0 0 0;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+}
+
+.site-footer .footer-brand {
+  color: #198754;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+}
+
+.site-footer .footer-desc {
+  color: #9ca3af;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  max-width: 440px;
+  margin-bottom: 0;
+  letter-spacing: normal;
+}
+
+.site-footer .footer-title {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.site-footer .footer-title-line {
+  width: 32px;
+  height: 2px;
+  background-color: #198754;
+  margin-bottom: 1.1rem;
+}
+
+.site-footer .footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.site-footer .footer-links li {
+  margin-bottom: 9px;
+}
+
+.site-footer .footer-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: normal;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-footer .footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.site-footer .footer-chevron {
+  color: #198754;
+  font-weight: 700;
+  margin-right: 8px;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.site-footer .footer-links a:hover .footer-chevron {
+  transform: translateX(2px);
+}
+
+/* Footer Bottom Bar */
+.site-footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 45px;
+  padding: 16px 0;
+  position: relative;
+}
+
+.site-footer .footer-bottom-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.site-footer .footer-copyright {
+  font-size: 13.5px;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 0;
+  letter-spacing: normal;
+}
+
+.site-footer .footer-copyright strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.site-footer .footer-scroll-top {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #198754;
+  color: #ffffff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  padding: 0;
+}
+
+.site-footer .footer-scroll-top:hover {
+  background-color: #157347;
+  transform: translateY(-50%) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(25, 135, 84, 0.45);
+  color: #ffffff;
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 767.98px) {
+  footer.site-footer {
+    padding-top: 40px;
+  }
+  .site-footer .footer-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-footer .footer-bottom {
+    margin-top: 35px;
+    padding: 18px 0;
+  }
+  .site-footer .footer-bottom-container {
+    flex-direction: column-reverse;
+    gap: 14px;
+    text-align: center;
+  }
+  .site-footer .footer-scroll-top {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+  }
+  .site-footer .footer-scroll-top:hover {
+    transform: translateY(-2px);
+  }
+  .site-footer .footer-copyright {
+    font-size: 12px;
+  }
+}
+
+/* Policy Modals Dark Theme Styling */
+.policy-modal .modal-content {
+  background-color: #212529;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  color: #d1d5db;
+}
+
+.policy-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.25rem;
+}
+
+.policy-modal .modal-title {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.policy-modal .modal-body {
+  padding: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+}
+
+.policy-modal .modal-body strong {
+  color: #ffffff;
+}
+
+.policy-modal .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.25rem;
+}
+
+.policy-modal .btn-secondary {
+  background-color: #495057;
+  border-color: #495057;
+  font-size: 0.85rem;
+  padding: 0.35rem 1.1rem;
+}
+
+.policy-modal .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
 }
 
 /**** Cart & Toast Styling ****/

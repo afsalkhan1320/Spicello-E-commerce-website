@@ -228,12 +228,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-auto py-3 bg-dark text-center text-muted">
-        <div class="container">
-            © 2026 Spicello. All Rights Reserved
-        </div>
-    </footer>
 
     <!-- Toast Container -->
     <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
@@ -350,7 +344,17 @@
             const users = getRegisteredUsers();
             
             // Check if user already exists
-            if (users.some(u => u.email.toLowerCase() === email.toLowerCase())) {
+            if (users.some(u => u.name && u.name.trim().toLowerCase() === name.toLowerCase())) {
+                showToast('Registration Failed', 'An account with this name already exists.', 'warning');
+                return;
+            }
+
+            if (users.some(u => u.phone && u.phone.trim() === phone)) {
+                showToast('Registration Failed', 'An account with this phone number already exists.', 'warning');
+                return;
+            }
+
+            if (users.some(u => u.email && u.email.trim().toLowerCase() === email.toLowerCase())) {
                 showToast('Registration Failed', 'An account with this email already exists.', 'warning');
                 return;
             }

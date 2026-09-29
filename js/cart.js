@@ -334,7 +334,7 @@ function renderCart() {
     const checkoutItemsContainer = document.getElementById('checkout-items-list');
     if (checkoutItemsContainer) {
         if (cart.length === 0) {
-            checkoutItemsContainer.innerHTML = '<p class="text-muted">No items in your cart. <a href="index.html">Shop Spices</a></p>';
+            checkoutItemsContainer.innerHTML = '<p class="text-muted">No items in your cart. <a href="products.html">Shop Spices</a></p>';
         } else {
             checkoutItemsContainer.innerHTML = cart.map(item => `
                 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -485,5 +485,30 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Run on window resize to ensure responsiveness
         window.addEventListener('resize', updateStickyOffset);
+    }
+});
+
+// Sync cart across multiple open browser tabs without manual refresh
+window.addEventListener('storage', (event) => {
+    if (!event.key || event.key === CART_STORAGE_KEY || event.key === COUPON_STORAGE_KEY) {
+        renderCart();
+    }
+});
+
+window.addEventListener('focus', () => {
+    renderCart();
+});
+
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        renderCart();
+    }
+});
+
+// Redirect to products page when clicking "Shop Spices" in empty cart state
+document.addEventListener('click', (e) => {
+    const emptyShopBtn = e.target.closest('#cart-empty-state .btn, #cart-empty-state a, #cart-empty-state button');
+    if (emptyShopBtn) {
+        window.location.href = 'products.html';
     }
 });

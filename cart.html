@@ -26,7 +26,7 @@
     </style>
 </head>
 
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top shadow-lg p-3 bg-dark">
         <div class="container-fluid">
@@ -179,11 +179,132 @@
     </div>
 
     <!-- Footer -->
-    <footer class="mt-auto py-3 bg-dark text-center text-muted">
-        <div class="container">
-            © 2026 Spicello. All Rights Reserved
+    <footer class="site-footer mt-auto">
+        <div class="container footer-content">
+            <div class="row gy-4 justify-content-between">
+                <!-- Column 1: Brand Info -->
+                <div class="col-lg-5 col-md-12">
+                    <a href="index.html#home" class="footer-brand">SPICELLO 🌶️</a>
+                    <p class="footer-desc">
+                        Exploring pure, authentic flavors around the world. We deliver 100% organic, handpicked Indian spices freshly packed without preservatives or artificial additives.
+                    </p>
+                </div>
+
+                <!-- Column 2: Overview -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <h5 class="footer-title">OVERVIEW</h5>
+                    <div class="footer-title-line"></div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home"><span class="footer-chevron">&gt;</span> Home</a></li>
+                        <li><a href="products.html"><span class="footer-chevron">&gt;</span> All Products</a></li>
+                        <li><a href="index.html#about"><span class="footer-chevron">&gt;</span> About Us</a></li>
+                        <li><a href="index.html#contact"><span class="footer-chevron">&gt;</span> Contact Us</a></li>
+                        <li><a href="track.html"><span class="footer-chevron">&gt;</span> Track Order</a></li>
+                        <li><a href="cart.html"><span class="footer-chevron">&gt;</span> Shopping Cart</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Policy -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <h5 class="footer-title">POLICY</h5>
+                    <div class="footer-title-line"></div>
+                    <ul class="footer-links">
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal"><span class="footer-chevron">&gt;</span> Privacy Policy</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal"><span class="footer-chevron">&gt;</span> Terms & Conditions</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#shippingModal"><span class="footer-chevron">&gt;</span> Shipping Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p class="footer-copyright">
+                    <span class="text-secondary">© 2026 </span><strong>Spicello Organics Pvt. Ltd.</strong><span class="text-secondary"> All Rights Reserved.</span>
+                </p>
+                <button type="button" class="footer-scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Scroll to top" title="Scroll to top">
+                    <i class="bi bi-arrow-up"></i>
+                </button>
+            </div>
         </div>
     </footer>
+
+    <!-- Policy Modals -->
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade policy-modal" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center" id="privacyPolicyModalLabel">
+                        <i class="bi bi-shield-fill-check text-success me-2 fs-5"></i> Privacy Policy
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-3">
+                        At <strong>Spicello</strong>, we value and respect your privacy. All customer information collected during checkout or newsletter registration is strictly used to process orders and improve your spice culinary experience.
+                    </p>
+                    <p class="mb-0">
+                        <strong>Data Protection:</strong> We use industry-standard encryption protocols. Your payment credentials and personal information are never sold or shared with third parties.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal fade policy-modal" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center" id="termsModalLabel">
+                        <i class="bi bi-file-earmark-text-fill text-success me-2 fs-5"></i> Terms of Service
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-3">
+                        By purchasing from Spicello, you agree to our terms of delivering pure, farm-fresh spices.
+                    </p>
+                    <p class="mb-0">
+                        Orders are dispatched within 24-48 hours. If you receive damaged packaging or incorrect spice items, notify customer support within 48 hours for immediate replacement or full refund.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shipping & Delivery Modal -->
+    <div class="modal fade policy-modal" id="shippingModal" tabindex="-1" aria-labelledby="shippingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center" id="shippingModalLabel">
+                        <i class="bi bi-truck text-success me-2 fs-5"></i> Shipping & Delivery
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-3">
+                        <strong>Shipping Rates:</strong> Free shipping is provided for all orders of Rs. 200 or above. A nominal delivery fee of Rs. 30 applies to orders below this threshold.
+                    </p>
+                    <p class="mb-0">
+                        <strong>Delivery Time:</strong> Metro cities receive delivery in 2-3 business days. Regional and rural locations receive delivery within 4-6 business days.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Cart Offcanvas Sidebar (For consistency) -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
@@ -199,7 +320,7 @@
                 <i class="bi bi-bag-x text-muted display-1"></i>
                 <h5 class="mt-3 text-secondary">Your cart is empty</h5>
                 <p class="text-muted small">Looks like you haven't added any organic spices yet.</p>
-                <button class="btn btn-success mt-2" data-bs-dismiss="offcanvas">Shop Spices</button>
+                <a href="products.html" class="btn btn-success mt-2">Shop Spices</a>
             </div>
             <div id="cart-items-list"></div>
         </div>
